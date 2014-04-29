@@ -1,0 +1,26 @@
+{
+  "name": "bbc_google_maps_util",
+  "version": "0.0.1",
+  "description": "BBC Google Maps utility",
+  "main": "build/bbc-google-maps-util.js",
+  "author": {
+    "name": "BBC Location Services Team"
+  },
+  "scripts": {
+    "build": "grunt build",
+    "test": "grunt qunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BBC-Location-Services/bbc_google_maps_util.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "load-grunt-tasks": "0.2.0",
+    "requirejs": "2.1.9",
+    "grunt": "0.4.2",
+    "grunt-cli": "0.1.11",
+    "grunt-contrib-qunit": "0.4.0",
+    "grunt-contrib-jshint": "^0.10.0"
+  }
+}

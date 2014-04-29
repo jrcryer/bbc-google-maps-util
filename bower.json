@@ -1,0 +1,21 @@
+{
+  "name": "bbc_google_maps_util",
+  "version": "0.0.1",
+  "description": "A BBC / Google Maps util bower component",
+  "main": "build/bbc-google-maps-util.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "qunit": "~1.12.0",
+    "sinonjs": "~1.7.3",
+    "sinon-qunit": "~1.0.0"
+  }
+}
