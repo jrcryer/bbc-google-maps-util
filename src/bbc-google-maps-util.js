@@ -1,5 +1,12 @@
-window.BBCGoogleMapsUtil = (function () {
-  var BBCGoogleMapsUtil = {
+(function (global, factory) {
+  if (typeof define === "function" && define.amd) {
+    define(factory({})); // AMD
+  } else {
+    global.BBCGoogleMapsUtil = factory({}); // <script>
+  }
+}(this, function (bbcGoogleMapUtil) {
+
+  bbcGoogleMapUtil = {
 
     /**
      * Prepare the Google map instance with some BBC agreed settings
@@ -13,6 +20,23 @@ window.BBCGoogleMapsUtil = (function () {
       this.map = map;
       this.updateAttribution();
       this.addLegalNotices();
+    },
+
+    /**
+     * Load a new instance if a google.maps.Map with BBC preferences applied.
+     *
+     * @param {DOM element} element
+     * @param {Object} options
+     */
+    Map: function (element, options) {
+      var defaults = {
+        hideLegalNotices: true
+      },
+      mapInstance = new google.maps.Map(element, mergeOptions(defaults, options));
+
+      this.prepareMap(mapInstance);
+
+      return mapInstance;
     },
 
     /**
@@ -47,15 +71,18 @@ window.BBCGoogleMapsUtil = (function () {
     }
   };
 
+  var mergeOptions = function (objectOne, objectTwo) {
+    for (var prop in objectTwo) {
+      objectOne[prop] = objectTwo[prop];
+    }
+    return objectOne;
+  };
+
   var setMarkup = function(dom, withHtml) {
     var googleTermsURL = "http://www.google.com/help/terms_maps_no_navigation.html";
     dom.innerHTML = (withHtml || '') + '<a href="' + googleTermsURL + '" target="_blank">Terms of use</a>';
   };
 
-  return BBCGoogleMapsUtil;
+  return bbcGoogleMapUtil;
 
-})();
-
-if (typeof module !== "undefined" && module !== null) {
-  module.exports = BBCGoogleMapsUtil;
-}
+}));
