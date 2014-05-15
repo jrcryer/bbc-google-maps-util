@@ -6,6 +6,8 @@
   }
 }(this, function (bbcGoogleMapUtil) {
 
+  "use strict";
+
   bbcGoogleMapUtil = {
 
     /**
@@ -73,7 +75,9 @@
 
   var mergeOptions = function (objectOne, objectTwo) {
     for (var prop in objectTwo) {
-      objectOne[prop] = objectTwo[prop];
+      if (objectTwo.hasOwnProperty(prop)) {
+        objectOne[prop] = objectTwo[prop];
+      }
     }
     return objectOne;
   };
