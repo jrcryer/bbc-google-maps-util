@@ -13,9 +13,9 @@
   "newcap": true,
   "trailing": true,
   "undef": true,
-  "unused": false, // turn back on
+  "unused": false,
   "laxbreak": false,
-  "evil": true, // review use of eval
+  "evil": true,
   "indent": 2,
   "quotmark": "double",
   "node": true,
