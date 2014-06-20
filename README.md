@@ -3,6 +3,8 @@ BBC / Google Maps Utility
 
 A Javascript Bower component to add some BBC agreed defaults to a Google map instance.
 
+[![Build Status](https://travis-ci.org/BBC-Location-Services/bbc-google-maps-util.svg?branch=master)](https://travis-ci.org/BBC-Location-Services/bbc-google-maps-util)
+
 
 Developing
 ----------
